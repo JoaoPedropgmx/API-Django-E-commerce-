@@ -32,4 +32,4 @@ class Compra(models.Model):
     produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'Compra nº {self.id}, Cliente: {self.cliente.cpf}'
+        return f'Compra nº {self.id}, Cliente: {self.cliente.id}'

@@ -13,8 +13,10 @@ class ClienteSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("O CPF é Inválido")
         return numero_cpf
     def validate_nome(self, nome):
-        if not nome.isalpha():
-            raise serializers.ValidationError("O nome deve possuir somente characteres alfabéticos")
+        valido = ['@', '.', '-', '+']
+        for elemento in valido:
+            if elemento in nome:
+                raise serializers.ValidationError("O nome deve possuir somente characteres alfabéticos")
         return nome
     def validate_rg(self, rg):
         if len(rg) != 9 or not rg.isnumeric():
@@ -32,12 +34,12 @@ class ProdutoSerializer(serializers.ModelSerializer):
         model = Produto
         fields = '__all__'
 
-class CompraSerializer(serializers.ModelSerializer):
-    cliente = serializers.ReadOnlyField(source='cliente.nome')
-    produto = serializers.ReadOnlyField(source='produto.nome')
-    class Meta:
-        model = Compra
-        fields = ['id', 'cliente', 'produto']
+# class CompraSerializer(serializers.ModelSerializer):
+#     cliente = serializers.ReadOnlyField(source='cliente.nome')
+#     produto = serializers.ReadOnlyField(source='produto.nome')
+#     class Meta:
+#         model = Compra
+#         fields = ['id', 'cliente', 'produto', 'cliente_id']
 
 
 class CategoriaSerializer(serializers.ModelSerializer):
@@ -49,9 +51,10 @@ class ListaCompraPorClienteSerializer(serializers.ModelSerializer):
     produto = serializers.ReadOnlyField(source='produto.nome')
     cliente = serializers.ReadOnlyField(source='cliente.nome')
     id_produto = serializers.ReadOnlyField(source='produto.id')
+    cliente_id = serializers.ReadOnlyField(source='cliente.id')
     class Meta:
         model = Compra
-        fields = ['id','produto', 'id_produto', 'cliente']
+        fields = ['id','produto', 'id_produto', 'cliente', 'cliente_id']
 
 class ListaCompraPorProdutoSerializer(serializers.ModelSerializer):
     produto = serializers.ReadOnlyField(source='produto.nome')

@@ -12,6 +12,6 @@ router.register('produtos', ProdutosViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
-    path('cliente/<int:pk>/compras', ListaComprasPorCliente.as_view()),
-    path('produto/<int:pk>/compras', ListaComprasPorProduto.as_view()),
+    path('clientes/<int:pk>/compras', ListaComprasPorCliente.as_view()),
+    path('produtos/<int:pk>/compras', ListaComprasPorProduto.as_view()),
 ]
