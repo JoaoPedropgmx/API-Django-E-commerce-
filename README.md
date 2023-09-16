@@ -25,8 +25,8 @@
 + Price
 + Category
 
-## The sellings consists of the following fields:
-+ Clients Name and ID
+## The sellings consist of the following fields:
++ User Name and ID
 + Products Name and ID
 
 Technologies used:
