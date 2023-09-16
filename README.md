@@ -21,25 +21,20 @@
 + active or not
 
 Technologies used:
-+ asgiref==3.7.2
-+ astroid==2.4.2
-+ colorama==0.4.6
-+ Django==4.2.5
-+ django-filter==23.2
-+ djangorestframework==3.14.0
-+ Faker==19.5.0
-+ isort==4.3.21
-+ lazy-object-proxy==1.4.3
-+ mccabe==0.6.1
-+ pylint==2.5.3
-+ python-dateutil==2.8.2
-+ pytz==2020.1
-+ six==1.15.0
-+ sqlparse==0.4.4
-+ toml==0.10.1
-+ tzdata==2023.3
-+ validate-docbr==1.10.0
-+ wrapt==1.12.1
+<table>
+  <tr>
+    <td>Django</td>
+    <td>djangorestframework</td>
+    <td>sqlparse</td>
+    <td>validate-docbr</td>
+  </tr>
+  <tr>
+    <td>4.2.5</td>
+    <td>3.14.0</td>
+    <td>0.4.4</td>
+    <td>1.10.0</td>
+  </tr>
+</table>
 
 ## How to run app:
 + 1 - Use the "pip install -r requirements.txt" command to install all of the Python modules
