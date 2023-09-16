@@ -20,6 +20,15 @@
 + cellphone
 + active or not
 
+## Every Product has the following fields:
++ Name
++ Price
++ Category
+
+## The sellings consists of the following fields:
++ Clients Name and ID
++ Products Name and ID
+
 Technologies used:
 <table>
   <tr>
